@@ -1,0 +1,27 @@
+name: Build APK
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.7
+      - name: Prepare project
+        run: |
+          if [ -f MyMoney.zip ]; then unzip -q -o MyMoney.zip; fi
+          if [ -f settings.gradle.kts ]; then echo "DIR=." >> $GITHUB_ENV; else echo "DIR=MyMoney" >> $GITHUB_ENV; fi
+      - name: Build debug APK
+        working-directory: ${{ env.DIR }}
+        run: gradle assembleDebug --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MyMoney-APK
+          path: ${{ env.DIR }}/app/build/outputs/apk/debug/*.apk
