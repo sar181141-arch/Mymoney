@@ -17,7 +17,9 @@ jobs:
       - name: Prepare project
         run: |
           if [ -f MyMoney.zip ]; then unzip -q -o MyMoney.zip; fi
-          if [ -f settings.gradle.kts ]; then echo "DIR=." >> $GITHUB_ENV; else echo "DIR=MyMoney" >> $GITHUB_ENV; fi
+          if [ -f settings.gradle.kts ]; then D=.; else D=MyMoney; fi
+          echo "DIR=$D" >> $GITHUB_ENV
+          if [ -f google-services.json ]; then cp google-services.json "$D/app/google-services.json"; fi
       - name: Build debug APK
         working-directory: ${{ env.DIR }}
         run: gradle assembleDebug --no-daemon
