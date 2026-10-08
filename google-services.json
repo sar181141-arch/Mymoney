@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "728608194983",
+    "project_id": "mymoney-93bb0",
+    "storage_bucket": "mymoney-93bb0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728608194983:android:0e1cc1411fdac4c4a9b682",
+        "android_client_info": {
+          "package_name": "com.mymoney.tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPAy3pjnTWtlt95X1bo1lOlzuH0GQlSjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
