@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:728608194983:android:d852e03a449b8f7ba9b682",
+        "android_client_info": {
+          "package_name": "com.mymoney.hisab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPAy3pjnTWtlt95X1bo1lOlzuH0GQlSjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:728608194983:android:0e1cc1411fdac4c4a9b682",
         "android_client_info": {
           "package_name": "com.mymoney.tracker"
